@@ -22,7 +22,16 @@
   </head>
   <body>
 
-    <select></select>
+    <select id="language-selector">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+    </select>
+
+
+
+
+
+    <script src="98/lang.js"></script>
     <!-- Start Header -->
     <header>
       <div class="container">
@@ -33,10 +42,10 @@
           
           <ul>
             
-            <li><a class="active" href="soma.html">Home</a></li>
-            <li><a href="12/index.html">US</a></li>
-            <li><a href="pic2.html">prducts</a></li>
-            <li><a href="video.html">Video</a></li>
+            <li data-lang ="الرئيسية"><a class="active" href="soma.html" data-lang ="الرئيسية">Home</a></li>
+            <li><a href="12/index.html" data-lang="نحن" >US</a></li>
+            <li><a href="pic2.html" data-lang="المنتجات">prducts</a></li>
+            <li><a href="video.html"data-lang="الفيديو">Video</a></li>
             
           </ul>
           <div class="form">
@@ -140,7 +149,7 @@
       </div>
     </div>
   </div>
-  <a href="pic2.html" class="more">More</a>
+  <a href="pic2.html" class="more" data-lang="للمزيد">More</a>
 </div>
 <!-- End Portfolio -->
 <!-- Start Video -->
@@ -151,7 +160,7 @@
   <div class="text">
     <h2>Somafix Video Here</h2>
     <p>Its All You Need</p>
-    <a class="button-tow" href="video.html"> For more</a>  
+    <a class="button-tow" href="video.html"data-lang="للمزيد"> For more</a>  
   </div>
 </div>
 <!-- End Video -->
@@ -179,7 +188,7 @@
         <div class="prog-holder">
           <h4>منطقة الرياض</h4>
           <div class="prog">
-            <span style="width: center" data-progress="90%"></span>
+            <span style="width: center" data-progress="30%"></span>
           </div>
         </div>
         <div class="prog-holder">
@@ -215,7 +224,7 @@
           <a href="https://www.tiktok.com/@somafix.tools?_t=8gpxfK80nQo&_r=1"><i class="fa-brands fa-tiktok" style="color: #b15110; font-size: 25px"></i></a>
           <a href="contact.html"><i class="fa-solid fa-phone" style="color: #b15110; font-size: 25px"></i></a>
         </div>
-        <p class="copyright">&copy; 2023 <span>Somfix</span> Tools</p>
+        <p class="copyright">&copy; 2024 <span>Somfix</span> Tools</p>
       </div>
     </div>
     <!-- End Footer -->
