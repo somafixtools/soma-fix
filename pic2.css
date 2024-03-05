@@ -61,6 +61,3 @@
     object-fit: cover;
 }
 
-.gallery .image-container .image:hover img{
-    transform: scale(1.4);
-}
