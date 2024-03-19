@@ -753,16 +753,18 @@
 .dropdown {
   display: inline-block;
   position: relative;
-  color:#000000;
+  color:#413e3e;
+  
 }
 
 button{
   border:none;
   border-radius:5px;
   padding:15px 30px;
-  font-size:15px;
+  font-size:30px;
   cursor:pointer;
-  color: #000000;
+  color: #ffffff;
+  background-color: #1e252c;
 }
 
 
@@ -771,9 +773,9 @@ button{
   display: none;
   position: absolute;
   overflow: auto;
-  background-color:#fff;
+  background-color:#1e252c;
   border-radius:7px;
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  
   text-align: center;
 }
 
@@ -783,14 +785,14 @@ button{
 
 .dropdown-options a {
   display: block;
-  color: #000000;
+  color: rgb(124, 66, 11);
   padding: 5px;
   text-decoration: none;
   padding:15 23px;
 }
 
 .dropdown-options a:hover {
-  color: #0a0a23;
+  color: rgb(124, 66, 11);
   background-color: #ddd;
   border-radius:5px;
 }
