@@ -142,7 +142,25 @@ input, select, textarea {
 			}
 
 		}
-
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box ;
+  font-family:sans-serif ;
+}
+.elements1 {
+  content:"" ;
+  display: block;
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image:url("1/w.png") ;
+  background-repeat:no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
 	body {
 		color: #212931;
 	}
