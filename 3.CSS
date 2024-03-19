@@ -142,25 +142,6 @@ input, select, textarea {
 			}
 
 		}
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box ;
-  font-family:sans-serif ;
-}
-.elements1 {
-  content:"" ;
-  display: block;
-  position:absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-image:url("1/w.png") ;
-  background-repeat:no-repeat ;
-  background-size: cover;
-  background-position: center;
-}
 	body {
 		color: #212931;
 	}
@@ -372,13 +353,6 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			.image.fit {
-				margin: 2rem 0;
-			}
-
-			.image.main {
-				margin: 2rem 0;
-			}
 
 		}
 
@@ -386,12 +360,6 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
-		a.image img {
-			-moz-transition: -moz-transform 0.2s ease-out;
-			-webkit-transition: -webkit-transform 0.2s ease-out;
-			-ms-transition: -ms-transform 0.2s ease-out;
-			transition: transform 0.2s ease-out;
-		}
 
 		
 
