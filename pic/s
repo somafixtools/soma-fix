@@ -1,0 +1,8 @@
+ <ul class="controls">
+        <li class="buttons active" data-filter="all">all</li>
+        <li class="buttons" data-filter="ice-cream">Power tools</li>
+        <li class="buttons" data-filter="chocolate">Hand tools</li>
+        <li class="buttons" data-filter="cake">Garden tools</li>
+        <li class="buttons" data-filter="juice">Safety</li>
+        <li class="buttons" data-filter="sandwich">Disk</li>
+    </ul>
