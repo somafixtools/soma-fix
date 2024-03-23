@@ -335,6 +335,11 @@ p, .tm-text-gray { color: #999; }
     font-size: 68.5%;
 }
 
+.img1-fluid{
+    width: 450PX;
+    height: 750PX;
+}
+
 .tm-gallery div.d-block { animation: show .5s ease; }
 
 @keyframes show {

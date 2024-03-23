@@ -1,3 +1,10 @@
+
+ body {
+    background-image: url(../1/w\ .png);
+    height: 100vh;
+    background-size: cover;
+ }
+   
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -6,11 +13,6 @@
     transition:all .2s cubic-bezier(.34,1.12,.68,1.31);
 }
 
-.gallery{
-    min-height: 100vh;
-    background:#ffffff;
-    padding-bottom: 100px;
-}
 
 .gallery .controls{
     display: flex;
@@ -71,46 +73,21 @@
     font-size: 1rem;
     
 }
-*{
-    margin: 0;
-     padding: 0px;
-     box-sizing: border-box ;
-     font-family:sans-serif ;
-   }
-   .elements1 {
-     content:"" ;
-     display: block;
-     position:absolute;
-     top: 0;
-     left:0;
-     height: 100%;
-     width: 100%;
-     background-image:url("1/w\ .png") ;
-     background-repeat:no-repeat ;
-     background-size: cover;
-     background-position: center;
-   }
 
 
 
+@media (max-width: 575.98px) {  }
+.elements1{
+    background-position: right center;
+ }
 
+@media (max-width: 767.98px) {  }
+.elements1{
+    background-position: right center;
+ }
 
-   *{
-    margin: 0;
-     padding: 0px;
-     box-sizing: border-box ;
-     font-family:sans-serif ;
-   }
-   .elements1 {
-     content:"" ;
-     display: block;
-     position:absolute;
-     top: 0;
-     left:0;
-     height: 100%;
-     width: 100%;
-     background-image:url("1/w\ .png") ;
-     background-repeat:no-repeat ;
-     background-size: cover;
-     background-position: center;
-   }
+@media (max-width: 991.98px) {  }
+
+.elements1{
+    background-position: right center;
+ }
