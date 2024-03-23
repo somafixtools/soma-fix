@@ -1,24 +1,9 @@
 
-
-*{
-    margin: 0;
-     padding: 0px;
-     box-sizing: border-box ;
-     font-family:sans-serif ;
-   }
-   .elements1 {
-     content:"" ;
-     display: block;
-     position:absolute;
-     top: 0;
-     left:0;
-     height: 100%;
-     width: 100%;
-     background-image:url("1/w\ .png") ;
-     background-repeat:no-repeat ;
-     background-size: cover;
-     background-position: center;
-   }
+body {
+    background-image: url(../1/w\ .png);
+    height: 100vh;
+    background-size: cover;
+ }
 
 *{
     margin: 0; padding: 0;
