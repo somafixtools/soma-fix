@@ -1,30 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Somafix</title>
-    <!-- Render All Elements Normally -->
-    <link rel="stylesheet" href="ss.css" />
-    <!-- Font Awesome Library -->
-    <link rel="stylesheet" href="ss.css" />
-    <!-- Main Template CSS File -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="ss.css" />
     <link rel="stylesheet" href="3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-    <meta thhp-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="index, follow"/>
     <meta name="google-site-verification" content="jugODNMkBxZr9S1JZU83O9hXSNHD7r64t0uuI5z0ZIw" />
     <meta name="google-site-verification" content="XnKRCgfhnt7kEyznvvwPb0hey5urFD7lDoKnZoFN3ak" />
+    
+    <style>
+      /* Language Switcher Styles */
+      .language-switcher {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index:900;
+        display: flex;
+        gap: 10px;
+      }
+      [dir="rtl"] .language-switcher {
+        left: auto;
+        right: 20px;
+      }
+      .language-btn {
+        background: #b15110;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      .language-btn:hover {
+        background: #8a3a0a;
+      }
+      
+      /* Restore original image styles */
+      .imgs-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+      }
+      .imgs-container .box {
+        overflow: hidden;
+        position: relative;
+        width: 25%;
+      }
+      @media (max-width: 991px) {
+        .imgs-container .box {
+          width: 50%;
+        }
+      }
+      @media (max-width: 767px) {
+        .imgs-container .box {
+          width: 100%;
+        }
+      }
+      .imgs-container .box img {
+        max-width: 100%;
+        transition: 0.3s;
+      }
+    </style>
   </head>
   <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+      <button class="language-btn" id="switchToEn">English</button>
+      <button class="language-btn" id="switchToAr">العربية</button>
+    </div>
    
     <!-- Start Header -->
     <header>
@@ -34,238 +84,250 @@
         </a>
         <nav>
           <div class="dropdown">
-            <button ><i class="fa-solid fa-bars" style="text-align: center;"></i></button>
+            <button><i class="fa-solid fa-bars"></i></button>
             <div class="dropdown-options">
-              <a href="soma.html"> Home</a>
-              <a href="pic/1.html"> Prudacts</a>
-              <a href="12/index.html" style="text-align: center;"> US</a>
-              <a href="video.html"> Video</a>
+              <a href="soma.html" id="menu-home">الرئيسية</a>
+              <a href="pic/1.html" id="menu-products">المنتجات</a>
+              <a href="12/index.html" id="menu-about">من نحن</a>
+              <a href="video.html" id="menu-videos">الفيديوهات</a>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <!-- End Header -->
+    
     <!-- Start Landing -->
     <div class="landing">
       <div class="overlay"></div>
-      <!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+      <div id="wrapper" class="fade-in">
+        <div id="intro">
+          <h1 id="intro-title">شركة<br />خبراء الاخشاب</h1>
+          <p id="intro-subtitle">Somafix</p>
+        </div>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>شركة<br />
-						خبراء الاخشاب</h1>
-						<p>Somafix<a href=""></a> <a href=""></a><br />
-						 <a href=""></a></p>
-						
-					</div>
-
-				<!-- Header -->
-				
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							
-							
-						</ul>
-						
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-             
-							<article class="post featured">
-								
-									
-                  
-									<h2><a href="#">شركة خبراء الاخشاب<br />
-									</a>Somafix</h2>
-                  <a href="#" class="elements1"><img src="" alt="" /></a>
-									<p style="text-align: center;">تقف شركة خبراء الأخشاب منذ تأسيسها قبل ثماني سنوات وحتى اليوم كعلامة بارزة ومميزة في تجارة العدد الصناعية،<br />
-									<br />
-									مع الالتزام بالسعي الدائم  لتحقيق أعلى مستويات الرضا لعملائها
-									وتحقيق المشاركة الفعالة في مشاريع المملكة متماشية بذلك مع رؤية المملكة العربية السعودية 2030
-								  </p>
-								</header>
-                
-								<a href="#" class="image main"><img src="12/images/20v-pro-edition1659349864 (1).jpg" alt="" /></a>
-              
-									
-								</ul>
-                
-							</article>
-           
-        
-         
-        
-      </div>
-      </div>
-        <li></li>
-        <li class="active"></li>
-        <li></li>
-      </ul>
-    </div>
-    <!-- End Landing -->
-   <!-- Start Portfolio -->
- <div class="portfolio">
-  <div class="container">
-    <div class="main-heading">
-      <h2>Somafix</h2>
-      <p>
-       
-      </p>
-    </div>
-    <ul class="shuffle">
-     
-  </div>
-  <div class="imgs-container">
-    <div class="box">
-      <img decoding="async" src="1/SFX8041.jpg" alt="" />
-      <div class="caption">
-        
-        
+        <div id="main">
+          <article class="post featured">
+            <a href="#" class="elements1"><img src="" alt="" /></a>
+            <h2 id="main-title">شركة خبراء الاخشاب<br />Somafix</h2>
+            <p style="text-align: center;" id="main-description">
+              تقف شركة خبراء الأخشاب منذ تأسيسها قبل ثماني سنوات وحتى اليوم كعلامة بارزة ومميزة في تجارة العدد الصناعية،<br />
+              <br />
+              مع الالتزام بالسعي الدائم لتحقيق أعلى مستويات الرضا لعملائها
+              وتحقيق المشاركة الفعالة في مشاريع المملكة متماشية بذلك مع رؤية المملكة العربية السعودية 2030
+            </p>
+            <a href="#" class="image main"><img src="12/images/20v-pro-edition1659349864 (1).jpg" alt="" /></a>
+          </article>
+        </div>
       </div>
     </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8585.jpg" alt="" />
-      <div class="caption">
-        
+    
+    <!-- Start Portfolio -->
+    <div class="portfolio">
+      <div class="container">
+        <div class="main-heading">
+          <h2>Somafix</h2>
+          <p id="portfolio-subtitle"></p>
+        </div>
+        <ul class="shuffle"></ul>
+        <div class="imgs-container">
+          <div class="box">
+            <img decoding="async" src="1/SFX8041.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8585.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8587.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/sfx8598.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8589.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8015.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8588.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+          <div class="box">
+            <img decoding="async" src="1/SFX8671.jpg" alt="" />
+            <div class="caption"></div>
+          </div>
+        </div>
+        <a href="pic/1.html" class="more" id="btn-more">المزيد</a>
       </div>
     </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8587.jpg" alt="" />
-      <div class="caption">
-        
-       
+    
+    <!-- Start Video -->
+    <div class="video">
+      <video autoplay muted loop>
+        <source src="images/awesome-video.mp4" type="video/mp4" />
+      </video>
+      <div class="text">
+        <h2 id="video-title">Somafix Video Here</h2>
+        <p style="text-align:center;" id="video-subtitle">Its All You Need</p>
+        <a class="button-tow" href="video.html" id="btn-watch-more">شاهد المزيد</a>  
       </div>
     </div>
-    <div class="box">
-      <img decoding="async" src="1/sfx8598.jpg" alt="" />
-      <div class="caption">
-        
-        
-      </div>
-    </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8589.jpg "alt="" />
-      <div class="caption">
-        
-        
-      </div>
-    </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8015.jpg" alt="" />
-      <div class="caption">
-        
-        
-      </div>
-    </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8588.jpg" alt="" />
-      <div class="caption">
-        
-        
-      </div>
-    </div>
-    <div class="box">
-      <img decoding="async" src="1/SFX8671.jpg" alt="" />
-      <div class="caption">
-        
-       
-      </div>
-    </div>
-  </div>
-  <a href="pic/1.html" class="more"   >More</a>
-</div>
-<!-- End Portfolio -->
-<!-- Start Video -->
-<div class="video">
-  <video autoplay muted loop>
-    <source src="images/awesome-video.mp4" type="video/mp4" />
-  </video>
-  <div class="text">
-    <h2>Somafix Video Here</h2>
-    <p style="text-align:center ;">Its All You Need</p>
-    <a class="button-tow" href="video.html"> For more</a>  
-  </div>
-</div>
-<!-- End Video -->
-    <!-- Start Design -->
-    <div class="design">
-      <div class="image">
-        
-      </div>
-      
-    </div>
-    <!-- End Design -->
-   <!-- Start Skills -->
-   <div class="our-skills">
-    <div class="container">
-      <div class="testimonials">
-        <ul class="bullets">
-         
-        </ul>
-      </div>
-      <div class="skills">
-        <h3>Somafix in Saudi Arabia <style></style></h3>
-        <p>
-          تم والحمدالله تغطية أغلب مناطق المملكة العربية السعودية.
-          والجدول ادناه يعرض نسب التغطية في بعض مناطق المملكة        </p>
+    
+    <!-- Start Skills -->
+    <div class="our-skills">
+      <div class="container">
+        <div class="skills">
+          <h3 id="coverage-title">Somafix in Saudi Arabia</h3>
+          <p id="coverage-description">
+            تم والحمدالله تغطية أغلب مناطق المملكة العربية السعودية.
+            والجدول ادناه يعرض نسب التغطية في بعض مناطق المملكة
+          </p>
           
           <div class="prog-holder">
-            <h4>منطقة الرياض</h4>
+            <h4 id="coverage-riyadh">منطقة الرياض</h4>
             <div class="prog">
-              <span style="width:30% " data-progress="30%"></span>
+              <span style="width:30%" data-progress="30%"></span>
             </div>
+          </div>
 
-        <div class="prog-holder">
-          <h4>الشرقية و الجنوب</h4>
-          <div class="prog">
-            <span style="width:60% " data-progress="60%"></span>
+          <div class="prog-holder">
+            <h4 id="coverage-eastern">الشرقية و الجنوب</h4>
+            <div class="prog">
+              <span style="width:60%" data-progress="60%"></span>
+            </div>
           </div>
-        </div>
-        <div class="prog-holder">
-          <h4>منطقة مكة المكرمة  </h4>
-          <div class="prog">
-            <span style="width: 85%" data-progress="97%"></span>
+
+          <div class="prog-holder">
+            <h4 id="coverage-makkah">منطقة مكة المكرمة</h4>
+            <div class="prog">
+              <span style="width: 85%" data-progress="97%"></span>
+            </div>
           </div>
-        </div>
-        <div class="prog-holder">
-          <h4>منطقة المدينة المنورة</h4>
-          <div class="prog">
-            <span style="width: 80%" data-progress="80%"></span>
+
+          <div class="prog-holder">
+            <h4 id="coverage-madinah">منطقة المدينة المنورة</h4>
+            <div class="prog">
+              <span style="width: 80%" data-progress="80%"></span>
+            </div>
           </div>
-        </div>
-        <div class="prog-holder">
-          <h4>منطقة القصيم</h4>
-          <div class="prog">
-            <span style="width: 90%" data-progress="90%"></span>
-          </div></div>
+
+          <div class="prog-holder">
+            <h4 id="coverage-qassim">منطقة القصيم</h4>
+            <div class="prog">
+              <span style="width: 90%" data-progress="90%"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-   <!-- End Skills -->
-   
+    
     <!-- Start Footer -->
     <div class="footer">
       <div class="container">
         <img decoding="async" src="1/logo.png" alt="Logo" style="max-width: 100%;" />
-        <p>We Are Social</p>
+        <p id="footer-social">We Are Social</p>
         <div class="social-icons">
           <a href="https://www.facebook.com/profile.php?id=100094000831956&mibextid=LQQJ4d"><i class="fa-brands fa-facebook-f" style="color: #b15110; font-size: 25px;"></i></a>
-          <a href="https://www.tiktok.com/@somafix.tools?_t=8gpxfK80nQo&_r=1"><i class="fa-brands fa-tiktok" style="color: #b15110; font-size: 25px "></i></a>
+          <a href="https://www.tiktok.com/@somafix.tools?_t=8gpxfK80nQo&_r=1"><i class="fa-brands fa-tiktok" style="color: #b15110; font-size: 25px"></i></a>
           <a href="tel:+966 55 274 7329"><i class="fa-solid fa-phone" style="color: #b15110; font-size: 25px"></i></a>
-          <a href="https://wa.me/+966 55 274 7329"><i class="fa-brands fa-whatsapp"style="color: #b15110; font-size: 25px"></i></a>
-          <a href="https://maps.app.goo.gl/H19kQpiZuE1UCp359"><i class="fa-solid fa-map"style="color: #b15110; font-size: 25px" ></i></a>
-          
+          <a href="https://wa.me/+966 55 274 7329"><i class="fa-brands fa-whatsapp" style="color: #b15110; font-size: 25px"></i></a>
+          <a href="https://maps.app.goo.gl/H19kQpiZuE1UCp359"><i class="fa-solid fa-map" style="color: #b15110; font-size: 25px"></i></a>
         </div>
-        <p class="copyright" style="text-align: center;">&copy; 2024 <span>Somfix</span> Tools</p>
+        <p class="copyright" style="text-align: center;">&copy; 2024 <span>Somafix</span> <span id="footer-rights">جميع الحقوق محفوظة</span></p>
       </div>
     </div>
-    <!-- End Footer -->
+
+    <!-- Translation Script -->
+    <script>
+      // Translation data
+      const translations = {
+        en: {
+          "menu-home": "Home",
+          "menu-products": "Products",
+          "menu-about": "About Us",
+          "menu-videos": "Videos",
+          "intro-title": "Wood Experts<br />Company",
+          "intro-subtitle": "Somafix - Woodworking Solutions",
+          "main-title": "Wood Experts Company<br />Somafix",
+          "main-description": "For eight years since its establishment, Wood Experts Company has been a prominent mark in industrial tools trade, committed to achieving the highest levels of customer satisfaction and actively participating in the Kingdom's projects in line with Saudi Vision 2030.",
+          "btn-more": "More",
+          "btn-watch-more": "Watch More",
+          "coverage-title": "Somafix in Saudi Arabia",
+          "coverage-description": "By God's grace, most regions of Saudi Arabia have been covered. The table below shows coverage rates in some regions.",
+          "coverage-riyadh": "Riyadh Region",
+          "coverage-eastern": "Eastern & Southern",
+          "coverage-makkah": "Makkah Region",
+          "coverage-madinah": "Madinah Region",
+          "coverage-qassim": "Qassim Region",
+          "footer-social": "We Are Social",
+          "footer-rights": "All Rights Reserved",
+          "video-title": "Somafix Video Here",
+          "video-subtitle": "Its All You Need",
+          "portfolio-subtitle": "Best Woodworking Solutions"
+        },
+        ar: {
+          "menu-home": "الرئيسية",
+          "menu-products": "المنتجات",
+          "menu-about": "من نحن",
+          "menu-videos": "الفيديوهات",
+          "intro-title": "شركة<br />خبراء الاخشاب",
+          "intro-subtitle": "Somafix",
+          "main-title": "شركة خبراء الاخشاب<br />Somafix",
+          "main-description": "تقف شركة خبراء الأخشاب منذ تأسيسها قبل ثماني سنوات وحتى اليوم كعلامة بارزة ومميزة في تجارة العدد الصناعية،<br /><br />مع الالتزام بالسعي الدائم لتحقيق أعلى مستويات الرضا لعملائها وتحقيق المشاركة الفعالة في مشاريع المملكة متماشية بذلك مع رؤية المملكة العربية السعودية 2030",
+          "btn-more": "المزيد",
+          "btn-watch-more": "شاهد المزيد",
+          "coverage-title": "Somafix في المملكة العربية السعودية",
+          "coverage-description": "تم والحمدالله تغطية أغلب مناطق المملكة العربية السعودية. والجدول ادناه يعرض نسب التغطية في بعض مناطق المملكة",
+          "coverage-riyadh": "منطقة الرياض",
+          "coverage-eastern": "الشرقية و الجنوب",
+          "coverage-makkah": "منطقة مكة المكرمة",
+          "coverage-madinah": "منطقة المدينة المنورة",
+          "coverage-qassim": "منطقة القصيم",
+          "footer-social": "تواصل معنا",
+          "footer-rights": "جميع الحقوق محفوظة",
+          "video-title": "Somafix Video Here",
+          "video-subtitle": "Its All You Need",
+          "portfolio-subtitle": ""
+        }
+      };
+
+      // Current language
+      let currentLang = 'ar';
+      
+      // Function to update content
+      function updateContent() {
+        // Update text content
+        for (const [key, value] of Object.entries(translations[currentLang])) {
+          const element = document.getElementById(key);
+          if (element) {
+            element.innerHTML = value;
+          }
+        }
+        
+        // Update direction
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      }
+      
+      // Language switch handlers
+      document.getElementById('switchToEn').addEventListener('click', function() {
+        currentLang = 'en';
+        updateContent();
+      });
+      
+      document.getElementById('switchToAr').addEventListener('click', function() {
+        currentLang = 'ar';
+        updateContent();
+      });
+      
+      // Initialize with Arabic
+      updateContent();
+    </script>
   </body>
 </html>
