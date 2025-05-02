@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,130 +7,167 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
-<!--
-    
-TemplateMo 556 Catalog-Z
-
-https://templatemo.com/tm-556-catalog-z
-
--->
+    <style>
+        /* Language Toggle Button */
+        .lang-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .lang-toggle-btn:hover {
+            background-color: #2a7a2a;
+        }
+        
+        /* Arabic content - initially hidden */
+        .arabic-content {
+            display: none;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* English content - initially shown */
+        .english-content {
+            display: block;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        /* RTL direction for Arabic */
+        body.rtl {
+            direction: rtl;
+        }
+        body.rtl .arabic-content {
+            display: block;
+        }
+        body.rtl .english-content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Language Toggle Button -->
+    <button id="langToggle" class="lang-toggle-btn">العربية</button>
+
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
-
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-
     </div>
+    
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            
-            <a class="navbar-brand" href=""  style="color: forestgreen;">
+            <a class="navbar-brand" href="" style="color: forestgreen;">
                 
-                Somafix
             </a>
-            
-            </button>
-            
-           
-            </div>
         </div>
     </nav>
-    <a href="#" class="tm-hero d-flex justify-content-center align-items-center"><img src="1/slogo.png" alt="" /></a>
     
-            
-            </button>
-        </form>
-    </div>
+    <a href="#" class="tm-hero d-flex justify-content-center align-items-center">
+        <img src="1/slogo.png" alt="Somafix Logo" />
+    </a>
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">Polyurethane Foam</h2>
+            <h2 class="col-12 tm-text-primary english-content" style="color: forestgreen;">Polyurethane Foam</h2>
+            <h2 class="col-12 tm-text-primary arabic-content" style="color: forestgreen;">رغوة البولي يوريثان</h2>
         </div>
+        
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <img src="sil/1659352320_1.png" alt="Image" class="img1-fluid" style="text-align: center;">
+                <img src="sil/1659352320_1.png" alt="Polyurethane Foam" class="img-fluid" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
             </div>
+            
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="tm-bg-gray tm-video-details">
-                    <p class="mb-4" >
-                      <h1 style="text-align: right;">Polyurethane Foam</h1>
-                   <h2 style="color: forestgreen; text-align: right;" >SOMAFIX POLYURETHANE FOAM S805</h2>
-                     
-                   <h4 style="text-align: right;">الوصف
-
-                 </h4>
-                   <p style="text-align: right;">
-                    رغوة البولي يوريثان SOMAFIX هي رغوة تعبئة وتركيب متعددة الاستخدامات. مصنوعة من مواد خام مستوردة. تتصلب تركيبتها الإضافية بواسطة الرطوبة في مدة تتراوح من ساعة إلى 3 ساعات.
-
-
+                    <!-- English Content -->
+                    <div class="english-content">
+                        <h1>Polyurethane Foam</h1>
+                        <h2 style="color: forestgreen;">SOMAFIX POLYURETHANE FOAM S805</h2>
+                        
+                        <h4>Description:</h4>
+                        <p>
+                            SOMAFIX polyurethane foam is a multi-purpose filling and installation foam. Made from imported raw materials. Its additive formula cures with moisture within 1 to 3 hours.
+                        </p>
+                        
+                        <h4>Application Areas:</h4>
+                        <p>
+                            For fixing doors, windows and similar frames, filling holes, insulating hot and cold pipes and electrical equipment, filling gaps, holes and cracks.
+                        </p>
                     
-                    </p>
-                   
-                   <h4 style="text-align: right;">مناطق التطبيق
-                </h4>
-                   <p style="text-align: right;">لتثبيت الأبواب والنوافذ وأطرها المماثلة، وملء الثقوب، واستخدامها في عزل الأنابيب الساخنة والباردة والمعدات الكهربائية، وملء الفجوات والثقوب والشقوق.
-
-                    </p>
-              
-                   <h4 style="text-align: right;">تعليمات الاستخدام
-                </h4>
-                   <p style="text-align: right;">اهتز العلبة بقوة لمدة 30 ثانية. ضع المحول على الصمام بإحكام وقم بقلب العلبة رأسًا على عقب، ثم اضغط على مشغل المحول لإطلاق الرغوة. من النصائح المهمة ترطيب الأسطح والرغوة المتحررة. يقصر ذلك وقت التصلب ويحسن الالتصاق. يمكن تنظيف الرغوة الطازجة باستخدام منظف رغوة البولي يوريثان من SOMAFIX. يمكن تنظيف الرغوة المصلبة ميكانيكيًا.
-
-                   </p>
-              
-                   <h4 style="text-align: right;">مدة الصلاحية
-                </h4>
-                   <p style="text-align: right;">15 شهراً بعد تاريخ الإنتاج. تاريخ الإنتاج موجود على العلبة.
-
-
-
-
-
+                        <h4>Usage Instructions:</h4>
+                        <p>
+                            Shake the can vigorously for 30 seconds. Firmly attach the adapter to the valve and turn the can upside down, then press the adapter trigger to release the foam. It's important to moisten surfaces and the released foam. This shortens the curing time and improves adhesion. Fresh foam can be cleaned with SOMAFIX polyurethane foam cleaner. Cured foam can be cleaned mechanically.
+                        </p>
                     
-                    </p>
-
-                   <h4 style="text-align: right;"></h4 >
-                   <p style="text-align: right;"></p>
-
-
-                </div>                    
-                    <div class="mb-4 d-flex flex-wrap">
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
+                        <h4>Shelf Life:</h4>
+                        <p>
+                            15 months from production date. Production date is printed on the can.
+                        </p>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                        <p></p>
-                    </div>
-                    <div>
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                       
+                    
+                    <!-- Arabic Content -->
+                    <div class="arabic-content">
+                        <h1 style="text-align: right;">رغوة البولي يوريثان</h1>
+                        <h2 style="color: forestgreen; text-align: right;">رغوة البولي يوريثان من سومافيكس S805</h2>
+                        
+                        <h4 style="text-align: right;">الوصف:</h4>
+                        <p style="text-align: right;">
+                            رغوة البولي يوريثان SOMAFIX هي رغوة تعبئة وتركيب متعددة الاستخدامات. مصنوعة من مواد خام مستوردة. تتصلب تركيبتها الإضافية بواسطة الرطوبة في مدة تتراوح من ساعة إلى 3 ساعات.
+                        </p>
+                        
+                        <h4 style="text-align: right;">مناطق التطبيق:</h4>
+                        <p style="text-align: right;">
+                            لتثبيت الأبواب والنوافذ وأطرها المماثلة، وملء الثقوب، واستخدامها في عزل الأنابيب الساخنة والباردة والمعدات الكهربائية، وملء الفجوات والثقوب والشقوق.
+                        </p>
+                    
+                        <h4 style="text-align: right;">تعليمات الاستخدام:</h4>
+                        <p style="text-align: right;">
+                            اهتز العلبة بقوة لمدة 30 ثانية. ضع المحول على الصمام بإحكام وقم بقلب العلبة رأسًا على عقب، ثم اضغط على مشغل المحول لإطلاق الرغوة. من النصائح المهمة ترطيب الأسطح والرغوة المتحررة. يقصر ذلك وقت التصلب ويحسن الالتصاق. يمكن تنظيف الرغوة الطازجة باستخدام منظف رغوة البولي يوريثان من SOMAFIX. يمكن تنظيف الرغوة المصلبة ميكانيكيًا.
+                        </p>
+                    
+                        <h4 style="text-align: right;">مدة الصلاحية:</h4>
+                        <p style="text-align: right;">
+                            15 شهراً بعد تاريخ الإنتاج. تاريخ الإنتاج موجود على العلبة.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">
-             
-                </div>
-            </div>        
-        </div> <!-- row -->
-    </div> <!-- container-fluid, tm-container-content -->
+    </div>
 
-   
-    </footer>
-    
     <script src="js/plugins.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
+        });
+
+        // Language toggle functionality
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const body = document.body;
+            const langToggle = document.getElementById('langToggle');
+            
+            if (body.classList.contains('rtl')) {
+                // Switch to English
+                body.classList.remove('rtl');
+                langToggle.textContent = 'العربية';
+                document.documentElement.lang = 'en';
+            } else {
+                // Switch to Arabic
+                body.classList.add('rtl');
+                langToggle.textContent = 'English';
+                document.documentElement.lang = 'ar';
+            }
         });
     </script>
 </body>
