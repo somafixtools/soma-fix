@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="EN" >
+<html lang="EN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,130 +7,167 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
-<!--
-    
-TemplateMo 556 Catalog-Z
-
-https://templatemo.com/tm-556-catalog-z
-
--->
+    <style>
+        /* Language Toggle Button */
+        .lang-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .lang-toggle-btn:hover {
+            background-color: #2a7a2a;
+        }
+        
+        /* Arabic content - initially hidden */
+        .arabic-content {
+            display: none;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        /* English content - initially shown */
+        .english-content {
+            display: block;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        /* RTL direction for Arabic */
+        body.rtl {
+            direction: rtl;
+        }
+        body.rtl .arabic-content {
+            display: block;
+        }
+        body.rtl .english-content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Language Toggle Button -->
+    <button id="langToggle" class="lang-toggle-btn">العربية</button>
+
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
-
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-
     </div>
+    
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            
-            <a class="navbar-brand" href=""  style="color: forestgreen;">
-                
-                Somafix
+            <a class="navbar-brand" href="" style="color: forestgreen;">
+              
             </a>
-            
-            </button>
-            
-           
-            </div>
         </div>
     </nav>
-    <a href="#" class="tm-hero d-flex justify-content-center align-items-center"><img src="1/slogo.png" alt="" /></a>
     
-            
-            </button>
-        </form>
-    </div>
+    <a href="#" class="tm-hero d-flex justify-content-center align-items-center">
+        <img src="1/slogo.png" alt="Somafix Logo" />
+    </a>
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">Sealants</h2>
+            <h2 class="col-12 tm-text-primary english-content" style="color: forestgreen;">Sealants</h2>
+            <h2 class="col-12 tm-text-primary arabic-content" style="color: forestgreen;">السيليكون</h2>
         </div>
+        
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <img src="sil/1634022575_1.png" alt="Image" class="img1-fluid" style="text-align: center;">
+                <img src="sil/1634022575_1.png" alt="Fire-Resistant Polyurethane Foam" class="img-fluid" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
             </div>
+            
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="tm-bg-gray tm-video-details">
-                    <p class="mb-4" >
-                      <h1 style="text-align: right;">مضادة للحريق</h1>
-                   <h2 style="color: forestgreen; text-align: right;" >رغوة البولي يوريثان SOMAFIX B2 المواصفات
-
-                   </h2>
-                     
-                   <h4 style="text-align: right;">الوصف:
-
-                 </h4>
-                   <p style="text-align: right;">
+                    <!-- English Content -->
+                    <div class="english-content">
+                        <h1>Fire-Resistant Foam</h1>
+                        <h2 style="color: forestgreen;">SOMAFIX B2 Polyurethane Foam Specifications</h2>
+                        
+                        <h4>Description:</h4>
+                        <p>
+                            Multi-purpose fixing and filling foam with an additive formula made of polyurethane that cures with moisture, meeting DIN 4102-1 standards. Features fire-resistant properties (B2) and self-extinguishing characteristics.
+                        </p>
+                        
+                        <h4>Application Areas:</h4>
+                        <p>
+                            Wherever fire-resistant or fire-extinguishing properties are required for fixing doors, window frames and similar panels, filling gaps, electrical installations, insulating hot and cold pipes, and covering gaps, holes and cracks. Excess material can be shaped, sanded and painted after curing (1-3 hours). The foam adheres to all types of building materials except silicone, Teflon, polyethylene and polypropylene. Resistant to all weather conditions, seawater, steam and humidity.
+                        </p>
                     
-                    رغوة تثبيت وتعبئة متعددة الاستخدامات، ذات صيغة إضافية مصنوعة من البولي يوريثان تتمتع بخاصية التصلب بالرطوبة، وتلبي معايير DIN 4102-1. تتميز بخاصية مقاومة للحريق (B2) وخاصية الانطفاء الذاتي.
-
-
-                    </p>
-                   
-                   <h4 style="text-align: right;">مناطق التطبيق:
-                </h4>
-                   <p style="text-align: right;">
-                    أينما كانت هناك حاجة إلى خصائص مقاومة للحريق أو إطفاء الحريق لتثبيت الأبواب وحالات النوافذ والألواح المماثلة، وملء الفجوات، وتركيبات الكهرباء، وعزل الأنابيب الساخنة والباردة، وتغطية الفجوات والثقوب والشقوق. يمكن تشكيل الأجزاء الزائدة، وصقلها، وطلاؤها بعد التصلب من ساعة إلى 3 ساعات. يمكن للرغوة الالتصاق بجميع أنواع مواد البناء باستثناء السيليكون، والتفلون، والبولي إيثيلين، والبولي بروبيلين. مقاومة لجميع أنواع الظروف الجوية، ومياه البحر، والبخار، والرطوبة.
-
-
-                    </p>
-              
-                   <h4 style="text-align: right;">تعليمات الاستخدام:
-                </h4>
-                   <p style="text-align: right;">اهتز العلبة بقوة لمدة 30 ثانية. قم بلف وتثبيت مشغل الجرعة المتخصص على العلبة. قم بإزالة الأوساخ والغبار والدهون من مكان التطبيق وترطيبه بالماء. (ترطيب الأرض والرغوة المتحررة مهم لتسريع التفاعل والحصول على نتيجة إنتاجية). قم بقلب العلبة رأسًا على عقب واضغط على المشغل. يجب إزالة بقايا الرغوة المجففة من الأنبوب والصمام للاستخدامات اللاحقة. يمكن تنظيف بقايا الرغوة الملطخة باستخدام منظف رغوة البولي يوريثان من SOMAFIX. نظرًا لأن الرغوة تميل إلى التمدد، يجب استخدام كميات مناسبة.
-
-                   </p>
-              
-                   <h4 style="text-align: right;">مدة الصلاحية:
-                </h4>
-                   <p style="text-align: right;">
-                    15 شهراً. تاريخ الإنتاج موجود على العلبة.
-
-                    </p>
-
-                   <h4 style="text-align: right;"></h4 >
-                   <p style="text-align: right;"></p>
-
-
-                </div>                    
-                    <div class="mb-4 d-flex flex-wrap">
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
+                        <h4>Usage Instructions:</h4>
+                        <p>
+                            Shake the can vigorously for 30 seconds. Screw and fix the specialized dosing actuator onto the can. Remove dirt, dust and grease from the application area and moisten with water (moistening the ground and released foam is important to accelerate the reaction and obtain a productive result). Turn the can upside down and press the actuator. Dried foam residue should be removed from the tube and valve for subsequent uses. Stained foam residue can be cleaned using SOMAFIX polyurethane foam cleaner. Since the foam tends to expand, appropriate amounts should be used.
+                        </p>
+                    
+                        <h4>Shelf Life:</h4>
+                        <p>
+                            15 months. Production date is printed on the can.
+                        </p>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                        <p></p>
-                    </div>
-                    <div>
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                       
+                    
+                    <!-- Arabic Content -->
+                    <div class="arabic-content">
+                        <h1 style="text-align: right;">مضادة للحريق</h1>
+                        <h2 style="color: forestgreen; text-align: right;">رغوة البولي يوريثان SOMAFIX B2 المواصفات</h2>
+                        
+                        <h4 style="text-align: right;">الوصف:</h4>
+                        <p style="text-align: right;">
+                            رغوة تثبيت وتعبئة متعددة الاستخدامات، ذات صيغة إضافية مصنوعة من البولي يوريثان تتمتع بخاصية التصلب بالرطوبة، وتلبي معايير DIN 4102-1. تتميز بخاصية مقاومة للحريق (B2) وخاصية الانطفاء الذاتي.
+                        </p>
+                        
+                        <h4 style="text-align: right;">مناطق التطبيق:</h4>
+                        <p style="text-align: right;">
+                            أينما كانت هناك حاجة إلى خصائص مقاومة للحريق أو إطفاء الحريق لتثبيت الأبواب وحالات النوافذ والألواح المماثلة، وملء الفجوات، وتركيبات الكهرباء، وعزل الأنابيب الساخنة والباردة، وتغطية الفجوات والثقوب والشقوق. يمكن تشكيل الأجزاء الزائدة، وصقلها، وطلاؤها بعد التصلب من ساعة إلى 3 ساعات. يمكن للرغوة الالتصاق بجميع أنواع مواد البناء باستثناء السيليكون، والتفلون، والبولي إيثيلين، والبولي بروبيلين. مقاومة لجميع أنواع الظروف الجوية، ومياه البحر، والبخار، والرطوبة.
+                        </p>
+                    
+                        <h4 style="text-align: right;">تعليمات الاستخدام:</h4>
+                        <p style="text-align: right;">
+                            اهتز العلبة بقوة لمدة 30 ثانية. قم بلف وتثبيت مشغل الجرعة المتخصص على العلبة. قم بإزالة الأوساخ والغبار والدهون من مكان التطبيق وترطيبه بالماء. (ترطيب الأرض والرغوة المتحررة مهم لتسريع التفاعل والحصول على نتيجة إنتاجية). قم بقلب العلبة رأسًا على عقب واضغط على المشغل. يجب إزالة بقايا الرغوة المجففة من الأنبوب والصمام للاستخدامات اللاحقة. يمكن تنظيف بقايا الرغوة الملطخة باستخدام منظف رغوة البولي يوريثان من SOMAFIX. نظرًا لأن الرغوة تميل إلى التمدد، يجب استخدام كميات مناسبة.
+                        </p>
+                    
+                        <h4 style="text-align: right;">مدة الصلاحية:</h4>
+                        <p style="text-align: right;">
+                            15 شهراً. تاريخ الإنتاج موجود على العلبة.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">
-             
-                </div>
-            </div>        
-        </div> <!-- row -->
-    </div> <!-- container-fluid, tm-container-content -->
+    </div>
 
-   
-    </footer>
-    
     <script src="js/plugins.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
+        });
+
+        // Language toggle functionality
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const body = document.body;
+            const langToggle = document.getElementById('langToggle');
+            
+            if (body.classList.contains('rtl')) {
+                // Switch to English
+                body.classList.remove('rtl');
+                langToggle.textContent = 'العربية';
+                document.documentElement.lang = 'en';
+            } else {
+                // Switch to Arabic
+                body.classList.add('rtl');
+                langToggle.textContent = 'English';
+                document.documentElement.lang = 'ar';
+            }
         });
     </script>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,47 +7,79 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
-<!--
-    
-TemplateMo 556 Catalog-Z
-
-https://templatemo.com/tm-556-catalog-z
-
--->
+    <style>
+        
+        .lang-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px; /* Changed from right to left */
+            z-index: 1000;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background-color: #2a7a2a;
+        }
+        .arabic {
+            direction: rtl;
+            text-align: right;
+        }
+        .english {
+            direction: ltr;
+            text-align: left;
+        }
+        .hidden {
+            display: none;
+        }
+        body.rtl {
+            direction: rtl;
+        }
+        body.ltr {
+            direction: ltr;
+        }
+        /* Adjust navbar position for RTL */
+        body.rtl .navbar {
+            padding-right: 60px;
+        }
+        body.ltr .navbar {
+            padding-left: 60px;
+        }
+    </style>
 </head>
-<body>
+<body class="ltr">
+    <!-- Language Toggle Button -->
+    <button id="langToggle" class="lang-btn">العربية</button>
+
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
-
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-
     </div>
+
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            
-            <a class="navbar-brand" href=""  style="color: forestgreen;">
+            <a class="navbar-brand" href="" style="color: forestgreen;">
                 
-                Somafix
             </a>
-            
-            </button>
-            
-           
-            </div>
         </div>
     </nav>
-    <a href="#" class="tm-hero d-flex justify-content-center align-items-center"><img src="1/slogo.png" alt="" /></a>
-    
-            
-            </button>
-        </form>
-    </div>
+
+    <a href="#" class="tm-hero d-flex justify-content-center align-items-center">
+        <img src="1/slogo.png" alt="" />
+    </a>
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">Sealants</h2>
+            <h2 class="col-12 tm-text-primary english" style="color: forestgreen;">Sealants</h2>
+            <h2 class="col-12 tm-text-primary arabic hidden" style="color: forestgreen;">السيليكون</h2>
         </div>
         <div class="row tm-mb-90">            
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -55,85 +87,110 @@ https://templatemo.com/tm-556-catalog-z
             </div>
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="tm-bg-gray tm-video-details">
-                    <p class="mb-4" >
-                      <h1 style="text-align: right;">Sealants</h1>
-                   <h2 style="color: forestgreen; text-align: right;" >SOMAFIX PU SEALANT MULTI PURPOSE CONSTRUCTION & AUTOMOTIVE (SAUSAGE) S751</h2>
-                     
-                   <h4 style="text-align: right;">الوصف:
+                    <div class="english">
+                        <h1>Sealants</h1>
+                        <h2 style="color: forestgreen;">SOMAFIX PU SEALANT MULTI PURPOSE CONSTRUCTION & AUTOMOTIVE (SAUSAGE) S751</h2>
+                        
+                        <h4>Description:</h4>
+                        <p>
+                            A multi-purpose polyurethane adhesive and sealant for dual purposes with permanent flexibility. Once applied, it hardens by reacting with air moisture to form a high-performance, fast-curing sealant adhesive. Fast curing. Can be easily painted. Surface can be easily smoothed and leveled. Non-corrosive. A highly versatile product with good adhesion to many surfaces. Excellent weather and water resistance.
+                        </p>
+                        
+                        <h4>Features & Application Areas:</h4>
+                        <p>
+                            SOMAFIX PU Sealant Multi Purpose Construction Automotive is a powerful, versatile sealing adhesive for all tasks involving sealing and bonding. (For a variety of materials including all cement-based materials, bricks, ceramics, glass, metals, wood, porous surfaces, polyester, acrylic resin, and plastics): Window and door frames made of wood, metal or plastic, roofs, fillings and covers, flexible air sealing, fixing lightweight materials, containers, tanks and silos.
+                        </p>
+                    
+                        <h4>Usage Instructions:</h4>
+                        <p>
+                            Ensure the surface to be applied is dry and clean, free from dust and grease. Tape the sides of the surface with adhesive tape. Cut the tip of the cartridge and place it in the gun. Cut the tip of the nozzle and insert it into the cartridge. Apply the sealant and remove the tapes. Protect from water for 24 hours after application.
+                        </p>
+                    
+                        <h4>Safety:</h4>
+                        <p>
+                            Keep out of reach of children. Avoid contact with eyes. Prolonged exposure to vapors may cause respiratory harm. Store in a cool, dry place.
+                        </p>
 
-                 </h4>
-                   <p style="text-align: right;">
-                    مركب لاصق وختم متعدد الأغراض من البولي يوريثان للغرض الثنائي مع مرونة دائمة. بمجرد طرحه، يتصلب بالتفاعل مع رطوبة الهواء لتشكيل مركب لاصق ختم عالي الأداء وسريع التصلب. تصلب سريع. يمكن طلاؤه بسهولة. يمكن تمهيد وتسوية السطح بسهولة. غير قابل للتآكل. منتج متعدد الاستخدامات للغاية مع قدرة جيدة على التصاق بالعديد من الأسطح. مقاوم للطقس والماء بشكل جيد.
-
-                    </p>
-                   
-                   <h4 style="text-align: right;">ميزات مناطق التطبيق:
-                </h4>
-                   <p style="text-align: right;">
-                    ختمات SOMAFIX PU Sealant Multi Purpose Construction Automotive هي مادة لاصقة ختم قوية ومتعددة الاستخدامات لجميع المهام التي تتضمن الختم والتصاق. (لمجموعة متنوعة من المواد بما في ذلك جميع المواد القائمة على الأسمنت، والطوب، والسيراميك، والزجاج، والمعادن، والخشب، والأسطح المنطلقة، والبوليستر، وراتنج الأكريليك، والبلاستيك): إطارات النوافذ والأبواب من الخشب أو المعدن أو البلاستيك، والسقوف، والحشوات والأغطية، وإحكام الهواء المرن، وتثبيت المواد الخفيفة، والحاويات، والخزانات والصوامع.
-
-
-                    </p>
-              
-                   <h4 style="text-align: right;">تعليمات الاستخدام:
-                </h4>
-                   <p style="text-align: right;">تأكد من أن السطح المراد وضعه جاف ونظيف، وخالي من الغبار والشحوم. قم بلصق جانبي السطح بشريط لاصق. قم بقطع طرف الكرتوش ووضعه في المسدس. قم بقطع طرف الكانولا وأدخله في الكرتوش. ضع المستحلب وقم بإزالة الشرائط. حماية ضد الماء لمدة 24 ساعة بعد التطبيق.
-
-                   </p>
-              
-                   <h4 style="text-align: right;">السلامة:
-                </h4>
-                   <p style="text-align: right;">
-                    ابقه بعيدًا عن متناول الأطفال. تجنب ملامسة العيون. يمكن أن يؤدي التعرض المطول للبخارات إلى ضرر في الجهاز التنفسي. يُحفظ في مكان بارد وجاف.
-
-
-                    </p>
-
-                   <h4 style="text-align: right;">مدة الصلاحية:
-                </h4 >
-                   <p style="text-align: right;">12 شهراً. تاريخ الإنتاج موجود على المنتج.
-
-
-
-
-                   </p>
-
-
-                </div>                    
-                    <div class="mb-4 d-flex flex-wrap">
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
-                        <div class="mr-4 mb-2">
-                            <span class="tm-text-gray-dark"> </span><span class="tm-text-primary"></span>
-                        </div>
+                        <h4>Shelf Life:</h4>
+                        <p>
+                            12 months. Production date is printed on the product.
+                        </p>
                     </div>
-                    <div class="mb-4">
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                        <p></p>
-                    </div>
-                    <div>
-                        <h3 class="tm-text-gray-dark mb-3"></h3>
-                       
+
+                    <div class="arabic hidden">
+                        <h1>السيليكون</h1>
+                        <h2 style="color: forestgreen;">سيمافيكس PU سيلانت متعدد الأغراض للبناء والمركبات (سجق) S751</h2>
+                        
+                        <h4>الوصف:</h4>
+                        <p>
+                            مركب لاصق وختم متعدد الأغراض من البولي يوريثان للغرض الثنائي مع مرونة دائمة. بمجرد طرحه، يتصلب بالتفاعل مع رطوبة الهواء لتشكيل مركب لاصق ختم عالي الأداء وسريع التصلب. تصلب سريع. يمكن طلاؤه بسهولة. يمكن تمهيد وتسوية السطح بسهولة. غير قابل للتآكل. منتج متعدد الاستخدامات للغاية مع قدرة جيدة على التصاق بالعديد من الأسطح. مقاوم للطقس والماء بشكل جيد.
+                        </p>
+                        
+                        <h4>ميزات مناطق التطبيق:</h4>
+                        <p>
+                            ختمات SOMAFIX PU Sealant Multi Purpose Construction Automotive هي مادة لاصقة ختم قوية ومتعددة الاستخدامات لجميع المهام التي تتضمن الختم والتصاق. (لمجموعة متنوعة من المواد بما في ذلك جميع المواد القائمة على الأسمنت، والطوب، والسيراميك، والزجاج، والمعادن، والخشب، والأسطح المنطلقة، والبوليستر، وراتنج الأكريليك، والبلاستيك): إطارات النوافذ والأبواب من الخشب أو المعدن أو البلاستيك، والسقوف، والحشوات والأغطية، وإحكام الهواء المرن، وتثبيت المواد الخفيفة، والحاويات، والخزانات والصوامع.
+                        </p>
+                    
+                        <h4>تعليمات الاستخدام:</h4>
+                        <p>
+                            تأكد من أن السطح المراد وضعه جاف ونظيف، وخالي من الغبار والشحوم. قم بلصق جانبي السطح بشريط لاصق. قم بقطع طرف الكرتوش ووضعه في المسدس. قم بقطع طرف الكانولا وأدخله في الكرتوش. ضع المستحلب وقم بإزالة الشرائط. حماية ضد الماء لمدة 24 ساعة بعد التطبيق.
+                        </p>
+                    
+                        <h4>السلامة:</h4>
+                        <p>
+                            ابقه بعيدًا عن متناول الأطفال. تجنب ملامسة العيون. يمكن أن يؤدي التعرض المطول للبخارات إلى ضرر في الجهاز التنفسي. يُحفظ في مكان بارد وجاف.
+                        </p>
+
+                        <h4>مدة الصلاحية:</h4>
+                        <p>
+                            12 شهراً. تاريخ الإنتاج موجود على المنتج.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary" style="color: forestgreen;">
-              
-                </div>
-            </div>        
-        </div> <!-- row -->
-    </div> <!-- container-fluid, tm-container-content -->
+    </div>
 
-   
-    </footer>
-    
     <script src="js/plugins.js"></script>
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
+        });
+
+        // Language toggle functionality
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const englishElements = document.querySelectorAll('.english');
+            const arabicElements = document.querySelectorAll('.arabic');
+            const body = document.body;
+            
+            // Toggle visibility
+            englishElements.forEach(el => el.classList.toggle('hidden'));
+            arabicElements.forEach(el => el.classList.toggle('hidden'));
+            
+            // Toggle body direction and language
+            if (body.classList.contains('ltr')) {
+                body.classList.remove('ltr');
+                body.classList.add('rtl');
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                this.textContent = 'English';
+            } else {
+                body.classList.remove('rtl');
+                body.classList.add('ltr');
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                this.textContent = 'العربية';
+            }
+            
+            // Adjust navbar padding
+            const navbar = document.querySelector('.navbar');
+            if (body.classList.contains('rtl')) {
+                navbar.style.paddingLeft = '20px';
+                navbar.style.paddingRight = '60px';
+            } else {
+                navbar.style.paddingLeft = '60px';
+                navbar.style.paddingRight = '20px';
+            }
         });
     </script>
 </body>
