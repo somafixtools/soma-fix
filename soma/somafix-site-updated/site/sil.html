@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somafix | السيليكون والمواد اللاصقة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── SILICON SECTION GREEN THEME ── */
+    :root {
+      --orange:    #1F8A4C;
+      --orange-dk: #156536;
+      --orange-lt: #2BB368;
+    }
+    .sil-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      padding: 56px 0 100px;
+    }
+    .sil-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .sil-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .sil-card-img {
+      background: var(--gray-100);
+      padding: 32px;
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .sil-card-img img {
+      max-width: 100%; max-height: 200px; object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .sil-card:hover .sil-card-img img { transform: scale(1.07); }
+    .sil-card-body { padding: 20px 22px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .sil-card-code {
+      font-family: var(--font-en); font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 2px; color: var(--orange); text-transform: uppercase;
+    }
+    .sil-card-body h3 { font-size: 0.92rem; font-weight: 800; color: var(--black); line-height: 1.4; flex: 1; }
+    .sil-card-body p { font-size: 0.8rem; color: var(--gray-400); line-height: 1.6; }
+    .sil-card-footer { padding: 0 22px 20px; }
+    .detail-link {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--black); color: var(--white);
+      padding: 11px 20px; border-radius: var(--radius-sm);
+      font-size: 0.87rem; font-weight: 700; transition: var(--transition);
+    }
+    .detail-link:hover { background: var(--orange); }
+
+    .breadcrumb-bar {
+      background: var(--white);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .breadcrumb-inner {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: var(--gray-400);
+    }
+    .breadcrumb-inner a { color: var(--orange); transition: var(--transition); }
+    .breadcrumb-inner a:hover { color: var(--orange-dk); }
+    .breadcrumb-inner i { font-size: 0.6rem; }
+
+    @media (max-width: 900px) { .sil-grid { grid-template-columns: repeat(2,1fr); gap:18px; } }
+    @media (max-width: 520px) {
+      .sil-grid { grid-template-columns: 1fr 1fr; gap:10px; }
+      .sil-card-img { padding: 18px; }
+      .sil-card-body { padding: 12px 14px 10px; }
+      .sil-card-body h3 { font-size: 0.78rem; }
+      .sil-card-footer { padding: 0 14px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="https://somafix.org/1/logo.png" alt="Somafix" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="products.html" class="active" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+        <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+        <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+        <li><a href="https://wa.me/966503937589" class="nav-cta" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-eyebrow" data-ar="قسم السيليكون" data-en="Sealants Category">قسم السيليكون</span>
+    <h1 data-ar="السيليكون والمواد اللاصقة" data-en="Sealants & Adhesives">السيليكون والمواد اللاصقة</h1>
+    <p data-ar="اضغط على أي منتج لرؤية التفاصيل الكاملة" data-en="Click any product to see full details">اضغط على أي منتج لرؤية التفاصيل الكاملة</p>
+  </div>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a>
+        <i class="fa-solid fa-chevron-left"></i>
+        <span data-ar="السيليكون" data-en="Sealants">السيليكون</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="background:var(--gray-100);">
+    <div class="container">
+      <div class="sil-grid">
+
+        <div class="sil-card fade-up">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1560374341_1.png" alt="S751" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S751</span>
+            <h3 data-ar="سيلانت PU متعدد الأغراض للبناء والمركبات (سجق)" data-en="PU Sealant Multi Purpose Construction & Automotive (Sausage)">سيلانت PU متعدد الأغراض للبناء والمركبات (سجق)</h3>
+            <p data-ar="بولي يوريثان · مرونة دائمة · سريع التصلب" data-en="Polyurethane · Permanent Flexibility · Fast Curing">بولي يوريثان · مرونة دائمة · سريع التصلب</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="sil-detail.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.07s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1632983675_1.jpg" alt="S700" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S700</span>
+            <h3 data-ar="مرساة كيميائية (قائمة على البوليستر) S700" data-en="Chemical Anchor (Polyester Based) S700">مرساة كيميائية (قائمة على البوليستر) S700</h3>
+            <p data-ar="ثنائي المكونات · تصلب سريع" data-en="Two-Component · Fast Curing">ثنائي المكونات · تصلب سريع</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil8.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.14s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1634021093_1.png" alt="S80" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S80</span>
+            <h3 data-ar="رذاذ متعدد الاستخدامات SOMAFIX S80" data-en="SOMAFIX Multi-Purpose Spray S80">رذاذ متعدد الاستخدامات SOMAFIX S80</h3>
+            <p data-ar="مزيت ومانع صدأ · يزيل الرطوبة" data-en="Lubricant & Anti-Rust · Removes Moisture">مزيت ومانع صدأ · يزيل الرطوبة</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil1.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.21s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1634021093_1.png" alt="S80" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S80</span>
+            <h3 data-ar="رذاذ متعدد الاستخدامات SOMAFIX S80" data-en="SOMAFIX Multi-Purpose Spray S80">رذاذ متعدد الاستخدامات SOMAFIX S80</h3>
+            <p data-ar="مزيت ومانع صدأ · يزيل الرطوبة" data-en="Lubricant & Anti-Rust · Removes Moisture">مزيت ومانع صدأ · يزيل الرطوبة</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil5.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.28s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1634022575_1.png" alt="B2" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">B2</span>
+            <h3 data-ar="رغوة البولي يوريثان المضادة للحريق SOMAFIX B2" data-en="SOMAFIX B2 Fire-Resistant Polyurethane Foam">رغوة البولي يوريثان المضادة للحريق SOMAFIX B2</h3>
+            <p data-ar="مقاومة للحريق · ذاتية الانطفاء" data-en="Fire-Resistant · Self-Extinguishing">مقاومة للحريق · ذاتية الانطفاء</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil2.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.35s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1634035370_1.png" alt="S665" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S665</span>
+            <h3 data-ar="لاصق MDF السريع العالمي SOMAFIX S665" data-en="SOMAFIX Universal Fast Adhesive MDF S665">لاصق MDF السريع العالمي SOMAFIX S665</h3>
+            <p data-ar="قوة التصاق عالية · يجف بسرعة" data-en="High Bonding Strength · Fast Drying">قوة التصاق عالية · يجف بسرعة</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil7.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.42s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1639401350_1.png" alt="S150" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S150</span>
+            <h3 data-ar="لاصق مونتاج PU الشفاف SOMAFIX S150" data-en="SOMAFIX PU Montage Clear Bond S150">لاصق مونتاج PU الشفاف SOMAFIX S150</h3>
+            <p data-ar="شفاف · مقاوم للماء والحرارة" data-en="Transparent · Water & Heat Resistant">شفاف · مقاوم للماء والحرارة</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil6.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.49s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1649939301_1.png" alt="S801" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S801</span>
+            <h3 data-ar="رغوة البولي يوريثان متعددة الأغراض S801" data-en="SOMAFIX Multi Purpose Polyurethane Foam S801">رغوة البولي يوريثان متعددة الأغراض S801</h3>
+            <p data-ar="عزل حراري · تعبئة وتركيب" data-en="Thermal Insulation · Filling & Installation">عزل حراري · تعبئة وتركيب</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil9.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+        <div class="sil-card fade-up" style="transition-delay:.56s">
+          <div class="sil-card-img"><img src="https://somafix.org/sil/1659352320_1.png" alt="S805" onerror="this.style.opacity=0" /></div>
+          <div class="sil-card-body">
+            <span class="sil-card-code">S805</span>
+            <h3 data-ar="رغوة البولي يوريثان SOMAFIX S805" data-en="SOMAFIX Polyurethane Foam S805">رغوة البولي يوريثان SOMAFIX S805</h3>
+            <p data-ar="تصلب 1-3 ساعات · مواد خام مستوردة" data-en="Cures in 1-3 Hours · Imported Raw Materials">تصلب 1-3 ساعات · مواد خام مستوردة</p>
+          </div>
+          <div class="sil-card-footer">
+            <a href="8/sil4.html" class="detail-link"><i class="fa-solid fa-circle-info"></i><span data-ar="عرض التفاصيل" data-en="View Details">عرض التفاصيل</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--orange);padding:56px 24px;text-align:center;">
+    <h2 style="color:white;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin-bottom:18px;" data-ar="هل تريد معرفة المزيد؟" data-en="Want to know more?">هل تريد معرفة المزيد؟</h2>
+    <a href="https://wa.me/966503937589" class="btn-outline" data-ar="تواصل معنا عبر واتساب" data-en="Contact us on WhatsApp">تواصل معنا عبر واتساب</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://somafix.org/1/logo.png" alt="Somafix" />
+          <p data-ar="الوجهة الأولى للعدد الصناعية في المملكة" data-en="The #1 Destination for Industrial Tools in Saudi Arabia">الوجهة الأولى للعدد الصناعية في المملكة</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+            <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+            <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+          <a href="tel:+966503937589"><i class="fa-solid fa-phone"></i> +966 50 393 7589</a>
+          <a href="https://wa.me/966503937589"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="footer-social">
+          <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+          <div class="social-row">
+            <a href="https://www.facebook.com/share/1SZk4bVAL1/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/somafix_ksa"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@somafix-c2f"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@soma.fix7"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Somafix</strong> — <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

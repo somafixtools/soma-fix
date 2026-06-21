@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somafix | المنتجات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding: 64px 0 100px;
+    }
+    .flip-card { perspective: 1000px; height: 380px; cursor: pointer; }
+    .flip-inner {
+      position: relative; width: 100%; height: 100%;
+      transition: transform 0.65s cubic-bezier(.4,0,.2,1);
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-inner { transform: rotateY(180deg); }
+    .flip-front, .flip-back {
+      position: absolute; inset: 0;
+      border-radius: var(--radius-md);
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+    .flip-front {
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 18px; padding: 32px 24px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .flip-front img { width: 170px; height: 170px; object-fit: contain; }
+    .flip-front h3 { font-size: 1.1rem; font-weight: 800; color: var(--gray-900); text-align: center; }
+    .flip-front .cat-tag {
+      display: inline-block; background: var(--gray-100); color: var(--orange);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 99px; font-family: var(--font-en);
+    }
+    .flip-back {
+      background: var(--black);
+      transform: rotateY(180deg);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; padding: 36px 28px; text-align: center;
+    }
+    .flip-back::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(200,91,15,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .flip-back .sfx-logo {
+      font-family: var(--font-en); font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 4px; color: var(--orange); text-transform: uppercase;
+    }
+    .flip-back h3 { font-size: 1.3rem; font-weight: 900; color: var(--white); line-height: 1.2; }
+    .flip-back p { color: rgba(255,255,255,0.55); font-size: 0.86rem; line-height: 1.6; }
+    .flip-back .view-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: var(--white);
+      padding: 11px 26px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 0.9rem; transition: var(--transition);
+      margin-top: 6px; position: relative; z-index: 1;
+    }
+    .flip-back .view-btn:hover { background: var(--orange-lt); transform: translateY(-2px); }
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .flip-card { height: 340px; }
+    }
+    @media (max-width: 560px) {
+      .cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .flip-card { height: 290px; }
+      .flip-front img { width: 100px; height: 100px; }
+      .flip-front h3 { font-size: 0.85rem; }
+      .flip-back p { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="https://somafix.org/1/logo.png" alt="Somafix Logo" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="products.html" class="active" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+        <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+        <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+        <li><a href="https://wa.me/966503937589" class="nav-cta" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-eyebrow" data-ar="تصفح الأقسام" data-en="Browse Categories">تصفح الأقسام</span>
+    <h1 data-ar="منتجاتنا" data-en="Our Products">منتجاتنا</h1>
+    <p data-ar="مجموعة متكاملة من الأدوات — حرك الماوس فوق الكارت للمزيد" data-en="A complete range of tools — hover a card to learn more">مجموعة متكاملة من الأدوات — حرك الماوس فوق الكارت للمزيد</p>
+  </div>
+
+  <section style="background:var(--gray-100);">
+    <div class="container">
+      <div class="cards-grid">
+
+        <!-- 1 Power -->
+        <div class="flip-card fade-up">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="كهربائية" data-en="Power">Power</span>
+              <img src="https://somafix.org/o/19_2_11zon.png" alt="Power Tools" onerror="this.style.opacity=0" />
+              <h3 data-ar="العدد الكهربائية" data-en="Power Tools">العدد الكهربائية</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="العدد الكهربائية" data-en="Power Tools">العدد الكهربائية</h3>
+              <p data-ar="أدوات كهربائية احترافية لجميع مشاريع البناء والتصنيع" data-en="Professional power tools for all construction and manufacturing projects">أدوات كهربائية احترافية لجميع مشاريع البناء والتصنيع</p>
+              <a href="powe.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Garden -->
+        <div class="flip-card fade-up" style="transition-delay:.08s">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="حديقة" data-en="Garden">Garden</span>
+              <img src="https://somafix.org/o/1-removebg-preview-removebg-preview_1_11zon.png" alt="Garden Tools" onerror="this.style.opacity=0" />
+              <h3 data-ar="أدوات الحديقة" data-en="Garden Tools">أدوات الحديقة</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="أدوات الحديقة" data-en="Garden Tools">أدوات الحديقة</h3>
+              <p data-ar="كل ما تحتاجه لصيانة وتجميل حديقتك باحترافية" data-en="Everything you need to maintain and beautify your garden">كل ما تحتاجه لصيانة وتجميل حديقتك باحترافية</p>
+              <a href="gar.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Hand Tools -->
+        <div class="flip-card fade-up" style="transition-delay:.16s">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="يدوية" data-en="Hand">Hand</span>
+              <img src="https://somafix.org/o/tools.png" alt="Hand Tools" onerror="this.style.opacity=0" />
+              <h3 data-ar="العدد اليدوية" data-en="Hand Tools">العدد اليدوية</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="العدد اليدوية" data-en="Hand Tools">العدد اليدوية</h3>
+              <p data-ar="عدد يدوية متينة ودقيقة للمحترف والهاوي" data-en="Durable and precise hand tools for professionals and hobbyists">عدد يدوية متينة ودقيقة للمحترف والهاوي</p>
+              <a href="tools.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Safety -->
+        <div class="flip-card fade-up" style="transition-delay:.24s">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="سلامة" data-en="Safety">Safety</span>
+              <img src="https://somafix.org/o/saf.png" alt="Safety" onerror="this.style.opacity=0" />
+              <h3 data-ar="معدات السلامة" data-en="Safety Equipment">معدات السلامة</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="معدات السلامة" data-en="Safety Equipment">معدات السلامة</h3>
+              <p data-ar="معدات حماية شخصية عالية الجودة تضمن سلامتك في العمل" data-en="High-quality personal protective equipment for workplace safety">معدات حماية شخصية عالية الجودة تضمن سلامتك في العمل</p>
+              <a href="saf.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Silicone -->
+        <div class="flip-card fade-up" style="transition-delay:.32s">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="سيليكون" data-en="Sealants">Sealants</span>
+              <img src="https://somafix.org/sil/1634021093_1.png" alt="Silicone" onerror="this.style.opacity=0" />
+              <h3 data-ar="السيليكون والمواد اللاصقة" data-en="Sealants & Adhesives">السيليكون والمواد اللاصقة</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="السيليكون والمواد اللاصقة" data-en="Sealants & Adhesives">السيليكون والمواد اللاصقة</h3>
+              <p data-ar="مواد ختم ولصق احترافية لجميع أنواع الأسطح" data-en="Professional sealants and adhesives for all surface types">مواد ختم ولصق احترافية لجميع أنواع الأسطح</p>
+              <a href="sil.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Discs -->
+        <div class="flip-card fade-up" style="transition-delay:.40s">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <span class="cat-tag" data-ar="أقراص" data-en="Discs">Discs</span>
+              <img src="https://somafix.org/o/WhatsApp_Image_2024-03-02_at_8.07.45_PM-removebg-preview-removebg-preview_6_11zon.png" alt="Discs" onerror="this.style.opacity=0" />
+              <h3 data-ar="الأقراص الكاشطة" data-en="Abrasive Discs">الأقراص الكاشطة</h3>
+            </div>
+            <div class="flip-back">
+              <span class="sfx-logo">SOMAFIX</span>
+              <h3 data-ar="الأقراص الكاشطة" data-en="Abrasive Discs">الأقراص الكاشطة</h3>
+              <p data-ar="أقراص كاشطة وقطع عالية الجودة لأعمال القطع والتشطيب" data-en="High-quality abrasive and cutting discs for all work">أقراص كاشطة وقطع عالية الجودة لأعمال القطع والتشطيب</p>
+              <a href="disck.html" class="view-btn"><span data-ar="عرض المنتجات" data-en="View Products">عرض المنتجات</span> <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--orange);padding:64px 24px;text-align:center;">
+    <h2 style="color:white;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:20px;" data-ar="هل تبحث عن منتج معين؟" data-en="Looking for a specific product?">هل تبحث عن منتج معين؟</h2>
+    <a href="https://wa.me/966503937589" class="btn-outline" data-ar="تواصل معنا عبر واتساب" data-en="Contact us on WhatsApp">تواصل معنا عبر واتساب</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://somafix.org/1/logo.png" alt="Somafix" />
+          <p data-ar="الوجهة الأولى للعدد الصناعية في المملكة" data-en="The #1 Destination for Industrial Tools in Saudi Arabia">الوجهة الأولى للعدد الصناعية في المملكة</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+            <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+            <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+          <a href="tel:+966503937589"><i class="fa-solid fa-phone"></i> +966 50 393 7589</a>
+          <a href="https://wa.me/966503937589"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="footer-social">
+          <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+          <div class="social-row">
+            <a href="https://www.facebook.com/share/1SZk4bVAL1/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/somafix_ksa"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@somafix-c2f"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@soma.fix7"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Somafix</strong> — <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somafix | الفيديوهات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── VIDEO PAGE SPECIFIC ── */
+    .videos-page { background: var(--gray-900); min-height: 100vh; }
+
+    /* Section Headers */
+    .video-section { padding: 72px 0; }
+    .video-section:nth-child(even) { background: rgba(255,255,255,0.03); }
+    .section-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 40px; padding-bottom: 20px;
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+    }
+    .section-header .icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .icon-green { background: rgba(26,122,26,0.2); color: #2EAD2E; }
+    .icon-orange { background: rgba(200,91,15,0.2); color: var(--orange); }
+    .section-header-text {}
+    .section-header-text .eyebrow {
+      display: block; font-family: var(--font-en); font-size: 0.7rem;
+      font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .eyebrow-green { color: #2EAD2E; }
+    .eyebrow-orange { color: var(--orange-lt); }
+    .section-header-text h2 {
+      font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: white; line-height: 1.2;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Video Card */
+    .vcard {
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: var(--transition);
+    }
+    .vcard:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    /* YouTube embed */
+    .vcard-embed {
+      position: relative; aspect-ratio: 16/9; overflow: hidden;
+      background: #000;
+    }
+    .vcard-embed iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: none;
+    }
+
+    /* Local video */
+    .vcard-video {
+      position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000;
+    }
+    .vcard-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Social placeholder card */
+    .vcard-social {
+      aspect-ratio: 16/9;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      background: rgba(255,255,255,0.03); padding: 24px; text-align: center;
+    }
+    .vcard-social i { font-size: 2.8rem; }
+    .vcard-social p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.5; }
+    .vcard-social a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 0.85rem; color: white; transition: var(--transition);
+    }
+    .a-tiktok { background: #000; border: 1px solid #333; }
+    .a-tiktok:hover { background: #111; }
+    .a-instagram { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .a-youtube { background: #FF0000; }
+    .a-youtube:hover { background: #cc0000; }
+    .a-snapchat { background: #FFFC00; color: #000 !important; }
+    .a-facebook { background: #1877F2; }
+
+    /* Card Info */
+    .vcard-info { padding: 16px 18px 20px; }
+    .vcard-info .tag {
+      display: inline-block; font-family: var(--font-en); font-size: 0.65rem;
+      font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 99px; margin-bottom: 8px;
+    }
+    .tag-green { background: rgba(26,122,26,0.2); color: #2EAD2E; }
+    .tag-orange { background: rgba(200,91,15,0.2); color: var(--orange-lt); }
+    .vcard-info h3 { font-size: 0.95rem; font-weight: 700; color: white; line-height: 1.4; }
+    .vcard-info p { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+    /* Featured Video */
+    .featured-video { padding: 64px 0; }
+    .featured-embed {
+      position: relative; aspect-ratio: 16/9; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .featured-embed video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* CTA Strip */
+    .social-cta {
+      background: linear-gradient(135deg, #0a2a0a 0%, var(--black) 100%);
+      padding: 64px 24px; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .social-cta h2 { color: white; font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; margin-bottom: 28px; }
+    .social-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .social-links a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: var(--radius-sm);
+      font-weight: 700; font-size: 0.9rem; color: white; transition: var(--transition);
+    }
+    .social-links a:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .video-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
+    }
+    @media (max-width: 560px) {
+      .video-grid { grid-template-columns: 1fr; gap: 14px; }
+      .video-section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body class="videos-page">
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="https://somafix.org/1/logo.png" alt="Somafix" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+        <li><a href="videos.html" class="active" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+        <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+        <li><a href="https://wa.me/966503937589" class="nav-cta" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="background:linear-gradient(135deg,#0E0D0C 0%,#0a1a0a 100%);">
+    <span class="section-eyebrow light" data-ar="مكتبة الفيديو" data-en="Video Library">مكتبة الفيديو</span>
+    <h1 style="color:white;" data-ar="فيديوهات Somafix" data-en="Somafix Videos">فيديوهات Somafix</h1>
+    <p data-ar="قسمان: السيليكون والعدد الصناعية" data-en="Two sections: Sealants & Industrial Tools">قسمان: السيليكون والعدد الصناعية</p>
+  </div>
+
+  <!-- FEATURED VIDEO -->
+  <section class="featured-video" style="background:var(--gray-900);">
+    <div class="container">
+      <span class="section-eyebrow" style="color:var(--orange-lt);" data-ar="الفيديو الرئيسي" data-en="Featured Video">الفيديو الرئيسي</span>
+      <h2 style="color:white;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:28px;" data-ar="اكتشف عالم Somafix" data-en="Discover the World of Somafix">اكتشف عالم Somafix</h2>
+      <div class="featured-embed">
+        <video controls poster="https://somafix.org/1/77.png" preload="none">
+          <source src="https://somafix.org/images/awesome-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       قسم 1 — السيليكون والمواد اللاصقة
+  ═══════════════════════════════════════════ -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="icon icon-green"><i class="fa-solid fa-droplet"></i></div>
+        <div class="section-header-text">
+          <span class="eyebrow eyebrow-green" data-ar="القسم الأول" data-en="Section One">القسم الأول</span>
+          <h2 data-ar="السيليكون والمواد اللاصقة" data-en="Sealants & Adhesives">السيليكون والمواد اللاصقة</h2>
+        </div>
+      </div>
+
+      <div class="video-grid">
+
+        <!-- ✅ فيديو 1: أضف رابط YouTube embed هنا -->
+        <div class="vcard fade-up">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Sealants" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Sealants</span>
+            <h3 data-ar="سيلانت PU S751 — طريقة الاستخدام" data-en="PU Sealant S751 — How to Use">سيلانت PU S751 — طريقة الاستخدام</h3>
+            <p>SOMAFIX S751</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 2 -->
+        <div class="vcard fade-up" style="transition-delay:.06s">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Foam" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Foam</span>
+            <h3 data-ar="رغوة البولي يوريثان S801 — كيف تستخدمها" data-en="PU Foam S801 — How to Use">رغوة البولي يوريثان S801 — كيف تستخدمها</h3>
+            <p>SOMAFIX S801</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 3 -->
+        <div class="vcard fade-up" style="transition-delay:.12s">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Adhesive" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Adhesives</span>
+            <h3 data-ar="لاصق MDF السريع S665 — التطبيق" data-en="MDF Fast Adhesive S665 — Application">لاصق MDF السريع S665 — التطبيق</h3>
+            <p>SOMAFIX S665</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 4 - TikTok السيليكون -->
+        <div class="vcard fade-up" style="transition-delay:.18s">
+          <div class="vcard-social">
+            <i class="fa-brands fa-tiktok" style="color:white;"></i>
+            <p data-ar="تابع فيديوهات السيليكون على تيك توك" data-en="Watch Sealants videos on TikTok">تابع فيديوهات السيليكون على تيك توك</p>
+            <a href="https://www.tiktok.com/@soma.fix7" target="_blank" class="a-tiktok">
+              <i class="fa-brands fa-tiktok"></i> @soma.fix7
+            </a>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">TikTok</span>
+            <h3 data-ar="Somafix على تيك توك" data-en="Somafix on TikTok">Somafix على تيك توك</h3>
+            <p>@soma.fix7</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 5 -->
+        <div class="vcard fade-up" style="transition-delay:.24s">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Chemical Anchor" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Anchor</span>
+            <h3 data-ar="المرساة الكيميائية S700 — الاستخدام" data-en="Chemical Anchor S700 — Usage">المرساة الكيميائية S700 — الاستخدام</h3>
+            <p>SOMAFIX S700</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 6 - Instagram -->
+        <div class="vcard fade-up" style="transition-delay:.30s">
+          <div class="vcard-social">
+            <i class="fa-brands fa-instagram" style="color:#E1306C;"></i>
+            <p data-ar="شاهد فيديوهات المنتجات على إنستغرام" data-en="Watch product videos on Instagram">شاهد فيديوهات المنتجات على إنستغرام</p>
+            <a href="https://www.instagram.com/somafix_ksa" target="_blank" class="a-instagram">
+              <i class="fa-brands fa-instagram"></i> @somafix_ksa
+            </a>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Instagram</span>
+            <h3 data-ar="Somafix على إنستغرام" data-en="Somafix on Instagram">Somafix على إنستغرام</h3>
+            <p>@somafix_ksa</p>
+          </div>
+        </div>
+
+        <!-- ═══ أضف المزيد من فيديوهات السيليكون هنا ═══
+        <div class="vcard fade-up">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" ...></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-green">Sealants</span>
+            <h3 data-ar="عنوان الفيديو بالعربي" data-en="Video Title in English">عنوان الفيديو</h3>
+            <p>SOMAFIX</p>
+          </div>
+        </div>
+        ═══ نهاية قسم الإضافة ═══ -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       قسم 2 — العدد الصناعية
+  ═══════════════════════════════════════════ -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="icon icon-orange"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div class="section-header-text">
+          <span class="eyebrow eyebrow-orange" data-ar="القسم الثاني" data-en="Section Two">القسم الثاني</span>
+          <h2 data-ar="العدد الصناعية" data-en="Industrial Tools">العدد الصناعية</h2>
+        </div>
+      </div>
+
+      <div class="video-grid">
+
+        <!-- ✅ فيديو 7 -->
+        <div class="vcard fade-up">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Power Tools" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Power Tools</span>
+            <h3 data-ar="العدد الكهربائية — عرض المنتجات" data-en="Power Tools — Product Showcase">العدد الكهربائية — عرض المنتجات</h3>
+            <p>SOMAFIX</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 8 -->
+        <div class="vcard fade-up" style="transition-delay:.06s">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLxxxxxxxxxxxxxxxxx"
+              title="Somafix Hand Tools" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Hand Tools</span>
+            <h3 data-ar="العدد اليدوية — كيفية الاستخدام" data-en="Hand Tools — How to Use">العدد اليدوية — كيفية الاستخدام</h3>
+            <p>SOMAFIX</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 9 -->
+        <div class="vcard fade-up" style="transition-delay:.12s">
+          <div class="vcard-video">
+            <video controls poster="https://somafix.org/1/SFX8041.jpg" preload="none">
+              <source src="https://somafix.org/images/awesome-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Somafix</span>
+            <h3 data-ar="Somafix — الفيديو التعريفي" data-en="Somafix — Introduction Video">Somafix — الفيديو التعريفي</h3>
+            <p>SOMAFIX KSA</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 10 - YouTube Channel -->
+        <div class="vcard fade-up" style="transition-delay:.18s">
+          <div class="vcard-social">
+            <i class="fa-brands fa-youtube" style="color:#FF0000;"></i>
+            <p data-ar="اشترك في قناة Somafix على يوتيوب وشاهد جميع الفيديوهات" data-en="Subscribe to Somafix YouTube channel and watch all videos">اشترك في قناة Somafix على يوتيوب وشاهد جميع الفيديوهات</p>
+            <a href="https://youtube.com/@somafix-c2f" target="_blank" class="a-youtube">
+              <i class="fa-brands fa-youtube"></i> @somafix-c2f
+            </a>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">YouTube</span>
+            <h3 data-ar="Somafix — قناة يوتيوب" data-en="Somafix — YouTube Channel">Somafix — قناة يوتيوب</h3>
+            <p>@somafix-c2f</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 11 - Snapchat -->
+        <div class="vcard fade-up" style="transition-delay:.24s">
+          <div class="vcard-social">
+            <i class="fa-brands fa-snapchat" style="color:#FFFC00;"></i>
+            <p data-ar="تابعنا على سناب شات لمشاهدة أحدث العروض" data-en="Follow us on Snapchat for the latest offers">تابعنا على سناب شات لمشاهدة أحدث العروض</p>
+            <a href="https://www.snapchat.com/add/somafix.tools" target="_blank" class="a-snapchat" style="color:#000;">
+              <i class="fa-brands fa-snapchat"></i> somafix.tools
+            </a>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Snapchat</span>
+            <h3 data-ar="Somafix على سناب شات" data-en="Somafix on Snapchat">Somafix على سناب شات</h3>
+            <p>somafix.tools</p>
+          </div>
+        </div>
+
+        <!-- ✅ فيديو 12 - Facebook -->
+        <div class="vcard fade-up" style="transition-delay:.30s">
+          <div class="vcard-social">
+            <i class="fa-brands fa-facebook" style="color:#1877F2;"></i>
+            <p data-ar="تابع صفحتنا على فيسبوك لمشاهدة أحدث الفيديوهات والعروض" data-en="Follow our Facebook page for the latest videos and offers">تابع صفحتنا على فيسبوك لمشاهدة أحدث الفيديوهات والعروض</p>
+            <a href="https://www.facebook.com/share/1SZk4bVAL1/" target="_blank" class="a-facebook">
+              <i class="fa-brands fa-facebook"></i> Somafix
+            </a>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Facebook</span>
+            <h3 data-ar="Somafix على فيسبوك" data-en="Somafix on Facebook">Somafix على فيسبوك</h3>
+            <p>Somafix Official</p>
+          </div>
+        </div>
+
+        <!-- ═══ أضف المزيد من فيديوهات العدد هنا ═══
+        <div class="vcard fade-up">
+          <div class="vcard-embed">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" ...></iframe>
+          </div>
+          <div class="vcard-info">
+            <span class="tag tag-orange">Tools</span>
+            <h3 data-ar="عنوان الفيديو بالعربي" data-en="Video Title in English">عنوان الفيديو</h3>
+            <p>SOMAFIX</p>
+          </div>
+        </div>
+        ═══ نهاية قسم الإضافة ═══ -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL CTA -->
+  <div class="social-cta">
+    <h2 data-ar="تابعنا على جميع المنصات" data-en="Follow Us on All Platforms">تابعنا على جميع المنصات</h2>
+    <div class="social-links">
+      <a href="https://youtube.com/@somafix-c2f" class="a-youtube" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+      <a href="https://www.tiktok.com/@soma.fix7" class="a-tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+      <a href="https://www.instagram.com/somafix_ksa" class="a-instagram" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      <a href="https://www.snapchat.com/add/somafix.tools" class="a-snapchat" style="color:#000;" target="_blank"><i class="fa-brands fa-snapchat"></i> Snapchat</a>
+      <a href="https://www.facebook.com/share/1SZk4bVAL1/" class="a-facebook" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://somafix.org/1/logo.png" alt="Somafix" />
+          <p data-ar="الوجهة الأولى للعدد الصناعية في المملكة" data-en="The #1 Destination for Industrial Tools in Saudi Arabia">الوجهة الأولى للعدد الصناعية في المملكة</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+            <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+            <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+          <a href="tel:+966503937589"><i class="fa-solid fa-phone"></i> +966 50 393 7589</a>
+          <a href="https://wa.me/966503937589"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="footer-social">
+          <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+          <div class="social-row">
+            <a href="https://www.facebook.com/share/1SZk4bVAL1/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/somafix_ksa"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@somafix-c2f"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@soma.fix7"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/somafix.tools"><i class="fa-brands fa-snapchat"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Somafix</strong> — <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

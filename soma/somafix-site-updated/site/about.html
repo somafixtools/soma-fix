@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somafix | من نحن</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .timeline {
+      position: relative;
+      padding: 48px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 50%;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--orange), transparent);
+    }
+    [dir="ltr"] .timeline::before { right: auto; left: 50%; }
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding-left: 0;
+      padding-right: calc(50% + 40px);
+      margin-bottom: 48px;
+    }
+    [dir="ltr"] .timeline-item {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 40px);
+    }
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 40px);
+    }
+    [dir="ltr"] .timeline-item:nth-child(even) {
+      justify-content: flex-end;
+      padding-left: 0;
+      padding-right: calc(50% + 40px);
+    }
+    .timeline-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+      max-width: 380px;
+      position: relative;
+    }
+    .timeline-card::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: -8px;
+      width: 16px; height: 16px;
+      background: var(--orange);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--orange);
+    }
+    [dir="ltr"] .timeline-card::after { left: auto; right: -8px; }
+    .timeline-item:nth-child(even) .timeline-card::after {
+      left: auto; right: -8px;
+    }
+    [dir="ltr"] .timeline-item:nth-child(even) .timeline-card::after {
+      right: auto; left: -8px;
+    }
+    .timeline-year {
+      font-family: var(--font-en);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .timeline-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+    .timeline-card p { font-size: 0.9rem; color: var(--gray-400); line-height: 1.6; }
+    .values-bg { background: var(--gray-100); }
+    .contact-section { background: var(--black); padding: 80px 0; }
+    .contact-section .section-title { color: var(--white); }
+    .contact-section .section-eyebrow { color: var(--orange-lt); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: var(--transition);
+    }
+    .contact-card:hover { background: rgba(200,91,15,0.15); border-color: var(--orange); transform: translateY(-4px); }
+    .contact-card i { font-size: 2.5rem; color: var(--orange); margin-bottom: 16px; }
+    .contact-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 8px; }
+    .contact-card a { color: rgba(255,255,255,0.6); font-size: 0.95rem; transition: var(--transition); }
+    .contact-card a:hover { color: var(--orange); }
+    @media (max-width: 768px) {
+      .timeline::before { right: 20px; }
+      [dir="ltr"] .timeline::before { left: 20px; right: auto; }
+      .timeline-item, .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-right: 0; padding-left: 60px;
+      }
+      [dir="rtl"] .timeline-item, [dir="rtl"] .timeline-item:nth-child(even) {
+        padding-right: 60px; padding-left: 0;
+      }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://somafix.org/1/logo.png" alt="Somafix Logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+        <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+        <li><a href="about.html" class="active" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+        <li><a href="https://wa.me/966503937589" class="nav-cta" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="section-eyebrow" data-ar="شركة خبراء الأخشاب" data-en="Wood Experts Company">شركة خبراء الأخشاب</span>
+    <h1 data-ar="من نحن" data-en="About Us">من نحن</h1>
+    <p data-ar="أكثر من 14 عاماً من الخبرة والاحترافية في عالم الأدوات الصناعية" data-en="Over 14 years of expertise and professionalism in the world of industrial tools">أكثر من 14 عاماً من الخبرة والاحترافية في عالم الأدوات الصناعية</p>
+  </div>
+
+  <!-- INTRO -->
+  <section class="about-intro section">
+    <div class="container two-col">
+      <div class="col-text fade-up">
+        <span class="section-eyebrow" data-ar="قصتنا" data-en="Our Story">قصتنا</span>
+        <h2 class="section-title" data-ar="أكثر من مجرد أدوات" data-en="More Than Just Tools">أكثر من مجرد أدوات</h2>
+        <p data-ar="تأسست شركة خبراء الأخشاب (Somafix) قبل أكثر من أربعة عشر عاماً، وأصبحت علامة بارزة في مجال تجارة العدد الصناعية بالمملكة العربية السعودية." data-en="Wood Experts Company (Somafix) was founded over 14 years ago and has become a prominent name in industrial tools trade in Saudi Arabia.">تأسست شركة خبراء الأخشاب (Somafix) قبل أكثر من أربعة عشر عاماً، وأصبحت علامة بارزة في مجال تجارة العدد الصناعية بالمملكة العربية السعودية.</p>
+        <p data-ar="نقدم مجموعة واسعة ومتنوعة من العدد الصناعية الاحترافية للمحترفين والشركات في مختلف قطاعات البناء والتصنيع والأعمال الخشبية." data-en="We offer a wide and diverse range of professional industrial tools for professionals and companies in various sectors of construction, manufacturing, and woodworking.">نقدم مجموعة واسعة ومتنوعة من العدد الصناعية الاحترافية للمحترفين والشركات في مختلف قطاعات البناء والتصنيع والأعمال الخشبية.</p>
+        <p data-ar="نؤمن بأن جودة الأداة هي بداية كل مشروع ناجح، لذا نحرص على تقديم أفضل المنتجات بأسعار تنافسية مع خدمة عملاء على أعلى مستوى." data-en="We believe that tool quality is the beginning of every successful project, so we ensure the best products at competitive prices with top-tier customer service.">نؤمن بأن جودة الأداة هي بداية كل مشروع ناجح، لذا نحرص على تقديم أفضل المنتجات بأسعار تنافسية مع خدمة عملاء على أعلى مستوى.</p>
+      </div>
+      <div class="col-visual fade-up" style="transition-delay:0.15s;">
+        <div class="img-frame">
+          <img src="https://somafix.org/12/images/20v-pro-edition1659349864 (1).jpg" alt="Somafix" />
+          <div class="img-badge">
+            <span class="badge-num">+14</span>
+            <span class="badge-txt" data-ar="سنة خبرة" data-en="Years Experience">سنة خبرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-bg section">
+    <div class="container">
+      <div class="section-head center fade-up">
+        <span class="section-eyebrow" data-ar="قيمنا" data-en="Our Values">قيمنا</span>
+        <h2 class="section-title" data-ar="ما يميزنا" data-en="What Sets Us Apart">ما يميزنا</h2>
+      </div>
+      <div class="vision-cards fade-up">
+        <div class="vision-card">
+          <i class="fa-solid fa-trophy"></i>
+          <h3 data-ar="الجودة أولاً" data-en="Quality First">الجودة أولاً</h3>
+          <p data-ar="نضمن أعلى جودة في كل منتج نقدمه، لأن ثقتك في Somafix هي أهم ما نحمي." data-en="We guarantee the highest quality in every product we offer, because your trust in Somafix is what we protect most.">نضمن أعلى جودة في كل منتج نقدمه، لأن ثقتك في Somafix هي أهم ما نحمي.</p>
+        </div>
+        <div class="vision-card">
+          <i class="fa-solid fa-handshake"></i>
+          <h3 data-ar="شراكة حقيقية" data-en="Real Partnership">شراكة حقيقية</h3>
+          <p data-ar="نبني علاقات طويلة الأمد مع عملائنا مبنية على الثقة والشفافية والدعم المستمر." data-en="We build long-term relationships with our clients based on trust, transparency, and continuous support.">نبني علاقات طويلة الأمد مع عملائنا مبنية على الثقة والشفافية والدعم المستمر.</p>
+        </div>
+        <div class="vision-card">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3 data-ar="تغطية شاملة" data-en="Comprehensive Coverage">تغطية شاملة</h3>
+          <p data-ar="نغطي أغلب مناطق المملكة العربية السعودية ونسعى للوصول إلى كل ركن في المملكة." data-en="We cover most regions of Saudi Arabia and strive to reach every corner of the Kingdom.">نغطي أغلب مناطق المملكة العربية السعودية ونسعى للوصول إلى كل ركن في المملكة.</p>
+        </div>
+        <div class="vision-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3 data-ar="سرعة التوصيل" data-en="Fast Delivery">سرعة التوصيل</h3>
+          <p data-ar="نحرص على إيصال المنتجات في أسرع وقت ممكن لضمان استمرار مشاريعكم دون انقطاع." data-en="We ensure products reach you as quickly as possible to keep your projects running without interruption.">نحرص على إيصال المنتجات في أسرع وقت ممكن لضمان استمرار مشاريعكم دون انقطاع.</p>
+        </div>
+        <div class="vision-card">
+          <i class="fa-solid fa-star"></i>
+          <h3 data-ar="رضا العملاء" data-en="Customer Satisfaction">رضا العملاء</h3>
+          <p data-ar="رضاك هو معيارنا للنجاح. نسعى دائماً لتجاوز توقعاتك في كل تعامل." data-en="Your satisfaction is our measure of success. We always strive to exceed your expectations.">رضاك هو معيارنا للنجاح. نسعى دائماً لتجاوز توقعاتك في كل تعامل.</p>
+        </div>
+        <div class="vision-card">
+          <i class="fa-solid fa-flag"></i>
+          <h3 data-ar="رؤية 2030" data-en="Vision 2030">رؤية 2030</h3>
+          <p data-ar="شركاء فاعلون في مسيرة رؤية المملكة 2030 نحو اقتصاد متنوع ومزدهر." data-en="Active partners in Saudi Vision 2030's journey toward a diverse and prosperous economy.">شركاء فاعلون في مسيرة رؤية المملكة 2030 نحو اقتصاد متنوع ومزدهر.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+      <div class="section-head center fade-up">
+        <span class="section-eyebrow" data-ar="مسيرتنا" data-en="Our Journey">مسيرتنا</span>
+        <h2 class="section-title" data-ar="أبرز محطاتنا" data-en="Key Milestones">أبرز محطاتنا</h2>
+      </div>
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-year">2015</div>
+            <h3 data-ar="التأسيس" data-en="Foundation">التأسيس</h3>
+            <p data-ar="تأسست شركة خبراء الأخشاب في المملكة العربية السعودية." data-en="Wood Experts Company was founded in Saudi Arabia.">تأسست شركة خبراء الأخشاب في المملكة العربية السعودية.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-year">2016</div>
+            <h3 data-ar="التوسع الأول" data-en="First Expansion">التوسع الأول</h3>
+            <p data-ar="توسعنا لتغطية أكثر من 3 مناطق في المملكة." data-en="We expanded to cover more than 3 regions in the Kingdom.">توسعنا لتغطية أكثر من 3 مناطق في المملكة.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-year">2016</div>
+            <h3 data-ar="إطلاق Somafix" data-en="Somafix Launch">إطلاق Somafix</h3>
+            <p data-ar="إطلاق علامة Somafix التجارية الخاصة بنا." data-en="Launch of our own Somafix brand.">إطلاق علامة Somafix التجارية الخاصة بنا.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-year">2019</div>
+            <h3 data-ar="تغطية مناطق المملكة" data-en="5 Regions Covered">تغطية مناطق الممكلة</h3>
+            <p data-ar="وصلنا لتغطية مناطق رئيسية في المملكة." data-en="We reached coverage of major regions in the Kingdom.">وصلنا لتغطية مناطق رئيسية في المملكة.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-year">2026</div>
+            <h3 data-ar="اليوم" data-en="Today">اليوم</h3>
+            <p data-ar="نواصل مسيرة النمو والتطور متماشين مع رؤية المملكة 2030." data-en="We continue our growth journey aligned with Saudi Vision 2030.">نواصل مسيرة النمو والتطور متماشين مع رؤية المملكة 2030.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-eyebrow" data-ar="تواصل معنا" data-en="Get In Touch">تواصل معنا</span>
+        <h2 class="section-title" data-ar="نحن هنا لمساعدتك" data-en="We're Here to Help">نحن هنا لمساعدتك</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa-solid fa-phone"></i>
+          <h3 data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</h3>
+          <a href="tel:+966503937589">+966 50 393 7589</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/966503937589" data-ar="تواصل عبر واتساب" data-en="Chat on WhatsApp">تواصل عبر واتساب</a>
+        </div>
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3 data-ar="موقعنا" data-en="Our Location">موقعنا</h3>
+          <a href="https://maps.app.goo.gl/H19kQpiZuE1UCp359" target="_blank" data-ar="المملكة العربية السعودية" data-en="Saudi Arabia">المملكة العربية السعودية</a>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:48px;">
+        <a href="https://wa.me/966503937589" class="btn-primary" style="font-size:1.1rem; padding:18px 48px;">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span data-ar="ابدأ المحادثة الآن" data-en="Start Chatting Now">ابدأ المحادثة الآن</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://somafix.org/1/logo.png" alt="Somafix" />
+          <p data-ar="الوجهة الأولى للعدد الصناعية في المملكة العربية السعودية" data-en="The #1 Destination for Industrial Tools in Saudi Arabia">الوجهة الأولى للعدد الصناعية في المملكة العربية السعودية</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
+            <li><a href="videos.html" data-ar="الفيديوهات" data-en="Videos">الفيديوهات</a></li>
+            <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
+          <a href="tel:+966503937589"><i class="fa-solid fa-phone"></i> +966 50 393 7589</a>
+          <a href="https://wa.me/966503937589"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="footer-social">
+          <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+          <div class="social-row">
+            <a href="https://www.facebook.com/share/1SZk4bVAL1/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/somafix_ksa"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@somafix-c2f"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@soma.fix7"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/somafix.tools"><i class="fa-brands fa-snapchat"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Somafix</strong> — <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
